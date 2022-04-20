@@ -39,15 +39,15 @@ module.exports.updateData = async (
 ) => {
   const responseBody = { error: [], success: false };
   if (row_number < 1) {
-    responseBody.errors.push({
+    responseBody.error = {
       message: "Invalid row_number field",
-    });
+    };
     return responseBody;
   }
   if (column_number < 0) {
-    responseBody.errors.push({
+    responseBody.error = {
       message: "Invalid column_number field",
-    });
+    };
     return responseBody;
   }
   try {
